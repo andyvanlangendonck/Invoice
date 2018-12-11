@@ -8,28 +8,26 @@ import { SdUiModule } from '@sdworx/sd-components';
 import { RouterModule, Route } from '@angular/router';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { HomeComponent } from './home/home.component';
-import { CustomerListComponent } from './customer-list/customer-list.component';
 
-import { CustomerService } from './invoice/customer.service';
+import { CustomerModule } from './customer-module/customer.module';
+import { CustomerPageComponent } from './customer-module/customer-page/customer-page.component';
 
-const ROUTES : Route[] = [{path: 'invoice', component: HomeComponent},
-    {path: 'customer', component: HomeComponent}];
+const ROUTES: Route[] = [
+  { path: 'invoice', component: HomeComponent },
+  { path: 'customer', component: CustomerPageComponent }
+];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    CustomerListComponent
-
-  ],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
-    NgbModule, SdUiModule.forRoot(), LoadingBarModule,
+    NgbModule,
+    SdUiModule.forRoot(),
+    LoadingBarModule,
     RouterModule.forRoot(ROUTES),
-    HttpClientModule
-
+    HttpClientModule,
+    CustomerModule
   ],
-  providers: [CustomerService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
