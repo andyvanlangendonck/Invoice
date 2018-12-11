@@ -10,7 +10,7 @@ export class CustomerService   {
     constructor(private http: HttpClient){}
 
 getCustomers () : Observable<Customer[]> {
-    let customers = this.http.get<Customer[]>('http://localhost/invoice/api/invoice')
+    let customers = this.http.get<Customer[]>('api/invoice')
         .pipe(catchError(this.handleError<Customer[]>('getCustomers', [])));
         
         return customers;

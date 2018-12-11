@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';$
+import { Component, OnInit } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -7,11 +7,9 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  constructor(private modalService: NgbModal) {}
 
-  constructor(private modalService: NgbModal) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   // showAddCustomer() {
   //   this.activeModal = this.modalService.open(AddCustomerModalComponent); // , { size: 'lg' });
@@ -20,5 +18,4 @@ export class HomeComponent implements OnInit {
   //     .subscribe(app => this.newApplication.emit(app));
 
   // }
-
 }

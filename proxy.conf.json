@@ -1,0 +1,8 @@
+{
+  "/api/*": {
+    "target": "http://localhost/invoice",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
