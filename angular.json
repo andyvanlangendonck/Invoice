@@ -23,6 +23,9 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@sdworx/webkit/dist/css/app.css", 
+              "node_modules/@sdworx/webkit/dist/css/icons.css", 
+              "node_modules/ngx-toastr/toastr.css", 
               "src/styles.css"
             ],
             "scripts": []
