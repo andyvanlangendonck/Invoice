@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 
 import { CustomerModule } from './customer-module/customer.module';
 import { CustomerPageComponent } from './customer-module/customer-page/customer-page.component';
+import { AddCustomerModalComponent } from './customer/add-customer-modal/add-customer-modal.component';
 
 const ROUTES: Route[] = [
   { path: 'invoice', component: HomeComponent },
@@ -18,7 +19,7 @@ const ROUTES: Route[] = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, AddCustomerModalComponent],
   imports: [
     BrowserModule,
     NgbModule,
@@ -28,6 +29,7 @@ const ROUTES: Route[] = [
     HttpClientModule,
     CustomerModule
   ],
+  entryComponents: [AddCustomerModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
