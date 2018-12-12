@@ -8,10 +8,10 @@ import { SdUiModule } from '@sdworx/sd-components';
 import { RouterModule, Route } from '@angular/router';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { HomeComponent } from './home/home.component';
+import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 
 import { CustomerModule } from './customer-module/customer.module';
 import { CustomerPageComponent } from './customer-module/customer-page/customer-page.component';
-import { AddCustomerModalComponent } from './customer/add-customer-modal/add-customer-modal.component';
 
 const ROUTES: Route[] = [
   { path: 'invoice', component: HomeComponent },
@@ -19,7 +19,7 @@ const ROUTES: Route[] = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AddCustomerModalComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     NgbModule,
@@ -27,9 +27,9 @@ const ROUTES: Route[] = [
     LoadingBarModule,
     RouterModule.forRoot(ROUTES),
     HttpClientModule,
-    CustomerModule
+    CustomerModule,
+    ReactiveFormsModule
   ],
-  entryComponents: [AddCustomerModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
