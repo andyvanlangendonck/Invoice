@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 
 import { CustomerService } from './invoice/customer.service';
+import { AddCustomerModalComponent } from './customer/add-customer-modal/add-customer-modal.component';
 
 const ROUTES : Route[] = [{path: 'invoice', component: HomeComponent},
     {path: 'customer', component: HomeComponent}];
@@ -19,7 +20,8 @@ const ROUTES : Route[] = [{path: 'invoice', component: HomeComponent},
   declarations: [
     AppComponent,
     HomeComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    AddCustomerModalComponent
 
   ],
   imports: [
@@ -29,6 +31,7 @@ const ROUTES : Route[] = [{path: 'invoice', component: HomeComponent},
     HttpClientModule
 
   ],
+  entryComponents: [AddCustomerModalComponent],
   providers: [CustomerService],
   bootstrap: [AppComponent]
 })

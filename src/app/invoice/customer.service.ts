@@ -16,6 +16,11 @@ getCustomers () : Observable<Customer[]> {
         return customers;
 }
 
+saveCustomer(customer: Customer) {
+    console.log("Save customer:", customer);
+    //return this.http.post<{ entity: Customer }>(this._baseUrl, application).pipe(map(r => r.entity));
+}
+
 private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
