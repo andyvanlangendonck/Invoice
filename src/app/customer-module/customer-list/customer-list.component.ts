@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import Customer from '../customer';
 
+
 @Component({
   selector: 'customer-list',
   templateUrl: './customer-list.component.html',
@@ -11,7 +12,9 @@ import Customer from '../customer';
 export class CustomerListComponent implements OnInit {
   @Input() customers: Customer[] = [];
 
-  constructor() {}
+  constructor( ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 }
