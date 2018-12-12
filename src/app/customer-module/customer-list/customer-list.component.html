@@ -1,4 +1,4 @@
-<div *ngFor="let customer of customers" >
+<div class="well hoverwell thumbnail" *ngFor="let customer of customers" [routerLink]="['/customerdetail', customer.Id]">
   <h2>{{customer.Name}}</h2>
   <div>Addres: {{customer.Address}}</div>
   <div>Telephone: {{customer.Telephone}}</div>

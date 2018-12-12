@@ -35,7 +35,7 @@ export class CustomerPageComponent implements OnInit {
     this.activeModal = this.modalService.open(AddCustomerModalComponent); // , { size: 'lg' });
     const modalComponent = this.activeModal.componentInstance as AddCustomerModalComponent;
     modalComponent.newCustomer
-      .pipe(map(r => (r as Customer)), flatMap(cust => this.http.post('http://localhost/invoice/api/invoice/', cust)))
+      .pipe(map(r => (r as Customer)), flatMap(cust => this.http.post('api/invoice/', cust)))
       .subscribe(theNewCustomer => console.log(theNewCustomer));
   }
 }

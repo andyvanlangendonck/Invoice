@@ -1,6 +1,6 @@
 export default interface Customer {
-  id: number;
-  name: string;
-  address: string;
-  telephone: string;
+  Id: number;
+  Name: string;
+  Address: string;
+  Telephone: string;
 }

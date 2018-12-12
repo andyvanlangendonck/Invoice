@@ -14,16 +14,15 @@
   <form [formGroup]="customerForm" (ngSubmit)="submitCustomer()">
     <div>
       <label for="name"> Name:</label>
-      <input id="name" type="text" formControlName="name" />
+      <input id="name" type="text" formControlName="Name" />
     </div>
     <div>
-      <label> Address: </label> <input type="text" formControlName="address" />
+      <label for="address">Address: </label>
+      <input id="address" type="text" formControlName="Address" />
     </div>
     <div>
-      <label> Telephone: </label>
-
-      <input type="text" formControlName="telephone" />
-      
+      <label for="telephone">Telephone: </label>
+      <input id="telephone" type="text" formControlName="Telephone" />
     </div>
   </form>
 </div>
