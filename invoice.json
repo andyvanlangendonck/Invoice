@@ -1,0 +1,11 @@
+{
+  "invoice": [{ "id": 1 }],
+  "customer": [
+    {
+      "id": 1,
+      "Name": "Yoeri",
+      "Address": "De straat 1",
+      "Telephone": "03777889988"
+    }
+  ]
+}
