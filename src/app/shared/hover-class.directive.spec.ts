@@ -20,9 +20,10 @@ class DummyComponent {
 /*
 https://codecraft.tv/courses/angular/unit-testing/directives/
 */
-xdescribe('hover-class directive', () => {
+describe('hover-class directive', () => {
   let fixture: ComponentFixture<DummyComponent>;
   let component: DummyComponent;
+  let directive: HoverClassDirective;
   let div: DebugElement;
 
   beforeEach(async(() => {
@@ -34,18 +35,21 @@ xdescribe('hover-class directive', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DummyComponent);
     component = fixture.componentInstance;
-    div = fixture.debugElement.query(By.css('div'));
-    fixture.detectChanges();
+    div = fixture.debugElement.query(By.directive(HoverClassDirective));
+    directive = div.injector.get(HoverClassDirective);
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
     expect(div).toBeTruthy();
+    expect(directive).toBeTruthy();
   });
 
   it('should highlight on mouseover', () => {
     component.color = 'yellow';
-    fixture.debugElement.triggerEventHandler('mouseover', null);
+    fixture.detectChanges();
+    expect(directive.highlightColor).toBe(component.color);
+    div.triggerEventHandler('mouseover', {});
     fixture.detectChanges();
     expect(div.nativeElement.style.backgroundColor).toBe(component.color);
   });
