@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { IUser } from './user.model';
-import { UserModule } from './user.module';
 
 @Injectable({
-  providedIn: UserModule // of 'root' om 1 instantie te hebben die overal in de app beschikbaar is
+  providedIn: 'root' // of 'UserModule' om 1 instantie te hebben die enkel in UserModule beschikbaar is
 })
 export class AuthService {
   currentUser: IUser;
