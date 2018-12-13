@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CustomerDetailComponent } from './customer-detail.component';
+import { SdUiModule } from '@sdworx/sd-components';
 
 describe('CustomerDetailComponent', () => {
   let component: CustomerDetailComponent;
@@ -8,9 +9,9 @@ describe('CustomerDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CustomerDetailComponent ]
-    })
-    .compileComponents();
+      declarations: [CustomerDetailComponent],
+      imports: [SdUiModule.forRoot()]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

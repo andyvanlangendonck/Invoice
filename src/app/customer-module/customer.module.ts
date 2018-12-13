@@ -7,14 +7,26 @@ import { AddCustomerModalComponent } from './add-customer-modal/add-customer-mod
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { RouterModule  } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { CustomerDetailPageComponent } from './customer-detail-page/customer-detail-page.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  imports: [CommonModule, SdUiModule, ReactiveFormsModule, RouterModule, SharedModule],
-  declarations: [CustomerListComponent, CustomerPageComponent, AddCustomerModalComponent, CustomerDetailComponent, CustomerDetailPageComponent],
+  imports: [
+    CommonModule,
+    SdUiModule,
+    ReactiveFormsModule,
+    RouterModule,
+    SharedModule
+  ],
+  declarations: [
+    CustomerListComponent,
+    CustomerPageComponent,
+    AddCustomerModalComponent,
+    CustomerDetailComponent,
+    CustomerDetailPageComponent
+  ],
   exports: [CustomerPageComponent, CustomerListComponent],
-  entryComponents: [AddCustomerModalComponent],
+  entryComponents: [AddCustomerModalComponent]
 })
 export class CustomerModule {}
