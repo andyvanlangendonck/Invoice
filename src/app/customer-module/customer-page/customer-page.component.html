@@ -15,6 +15,7 @@
     </button>
   </sd-body-content-header>
   <sd-body-content-inner>
-    <customer-list [customers]="customers$ | async"></customer-list>
+    <sd-spinner *ngIf="loading$ | async"></sd-spinner>
+    <customer-list *ngIf="!(loading$ | async)" [customers]="customers$ | async"></customer-list>
   </sd-body-content-inner>
 </sd-body-content>

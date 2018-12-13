@@ -12,10 +12,15 @@ import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 
 import { CustomerModule } from './customer-module/customer.module';
 import { CustomerPageComponent } from './customer-module/customer-page/customer-page.component';
+import { CustomerDetailPageComponent } from './customer-module/customer-detail-page/customer-detail-page.component';
+
+
 
 const ROUTES: Route[] = [
   { path: 'invoice', component: HomeComponent },
-  { path: 'customer', component: CustomerPageComponent }
+  { path: 'customer', component: CustomerPageComponent },
+  { path: 'customerdetail/:id', component: CustomerDetailPageComponent  },
+  { path: 'user', loadChildren: './user-module/user.module#UserModule' }
 ];
 
 @NgModule({

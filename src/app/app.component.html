@@ -1,13 +1,15 @@
 <sd-container>
     <sd-header applicationName="Invoice">
+        <sd-header-search position="center" size="30rem"></sd-header-search>
     </sd-header>
     <sd-body>
             <sd-sidebar sidebarFoldedMdDown="true">
                     <sd-sidebar-item [routerLink]="['/']" name="Home" navIcon="icon8-home" ></sd-sidebar-item>
                     <sd-sidebar-item routerLink="/customer" name="Customer" navIcon="icons8-money"></sd-sidebar-item>
-                    <sd-sidebar-item routerLink="/invoice" name="Invoice" navIcon="icons8-money"></sd-sidebar-item>
+                    <sd-sidebar-item routerLink="/customer" name="Invoice" navIcon="icons8-money"></sd-sidebar-item>
+                    <sd-sidebar-item routerLink="/user/login" name="Login" navIcon="icons8-profile"></sd-sidebar-item>
+                    <sd-sidebar-item routerLink="/user/profile" name="Profile" navIcon="icons8-profile"></sd-sidebar-item>
             </sd-sidebar>
         <router-outlet></router-outlet>            
     </sd-body>
-
 </sd-container>

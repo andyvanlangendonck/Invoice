@@ -9,9 +9,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { RouterModule  } from '@angular/router';
 import { CustomerDetailPageComponent } from './customer-detail-page/customer-detail-page.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  imports: [CommonModule, SdUiModule, ReactiveFormsModule, RouterModule],
+  imports: [CommonModule, SdUiModule, ReactiveFormsModule, RouterModule, SharedModule],
   declarations: [CustomerListComponent, CustomerPageComponent, AddCustomerModalComponent, CustomerDetailComponent, CustomerDetailPageComponent],
   exports: [CustomerPageComponent, CustomerListComponent],
   entryComponents: [AddCustomerModalComponent],

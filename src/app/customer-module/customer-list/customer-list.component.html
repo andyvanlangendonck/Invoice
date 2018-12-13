@@ -1,5 +1,10 @@
-<div class="well hoverwell thumbnail" *ngFor="let customer of customers" [routerLink]="['/customerdetail', customer.Id]">
-  <h2>{{customer.Name}}</h2>
-  <div>Addres: {{customer.Address}}</div>
-  <div>Telephone: {{customer.Telephone}}</div>
-</div>
+<sd-card *ngFor="let customer of customers" [routerLink]="['/customerdetail', customer.Id]" >
+  <sd-card-header>
+      {{customer.Name}}
+  </sd-card-header>
+  <sd-card-body appHighlight highlightColor="lightgray">
+      <h2 class="card-title">{{customer.Name}}</h2>
+      <small class="d-block">Addres: {{customer.Address}}</small>
+      <small class="d-block">Telephone: {{customer.Telephone}}</small>
+    </sd-card-body>
+</sd-card>

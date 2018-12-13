@@ -18,9 +18,6 @@ export class CustomerDetailPageComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    //hier ophalen detail
-    //vervolgens tonen detail in component
-
      //uitgebreide manier = als de route langer is dan de id alleen bijv invoice/1/test/blablabla/12345
      this.customer$ = this.activatedRoute.paramMap.pipe(
        map(paramMap => +paramMap.get("id")),
@@ -31,14 +28,14 @@ export class CustomerDetailPageComponent implements OnInit {
     //this.customer$ = this.getCustomer(+this.activatedRoute.snapshot.paramMap.get('id'));
 
     //converteer customer observable naar customer
-    let customer: Customer;
-    this.customer$.subscribe(c => (customer = c));
+    //let customer: Customer;
+    //this.customer$.subscribe(c => (customer = c));
     
   }
   
   getCustomer(id: number): Observable<Customer> {
     let customer = this.http
-      .get<Customer>(`api/invoice/${id}`)
+      .get<Customer>(`api/invoice/${id}/detail`)
       .pipe(catchError(handleError<Customer>("getCustomer")));
 
     return customer;
