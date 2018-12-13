@@ -4,27 +4,29 @@ import {
   ComponentFixture,
   inject
 } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { HoverClassDirective } from './hover-class.directive';
-import { ElementRef, Component, Renderer2 } from '@angular/core';
+import { ElementRef, Component, Renderer2, DebugElement } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   template: `
-    <div [appHighlight]="color"></div>
+    <div appHighlight [highlightColor]="color"></div>
   `
 })
 class DummyComponent {
   color = 'green';
 }
-
+/*
+https://codecraft.tv/courses/angular/unit-testing/directives/
+*/
 xdescribe('hover-class directive', () => {
   let fixture: ComponentFixture<DummyComponent>;
   let component: DummyComponent;
+  let div: DebugElement;
 
   beforeEach(async(() => {
-    spyOn(console, 'log');
-
-    TestBed.configureTestingModule({
+    return TestBed.configureTestingModule({
       declarations: [DummyComponent, HoverClassDirective]
     }).compileComponents();
   }));
@@ -32,26 +34,19 @@ xdescribe('hover-class directive', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DummyComponent);
     component = fixture.componentInstance;
+    div = fixture.debugElement.query(By.css('div'));
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
-    expect(console.log).toHaveBeenCalledWith('test');
+    expect(div).toBeTruthy();
   });
 
   it('should highlight on mouseover', () => {
-    component.color = 'green';
+    component.color = 'yellow';
+    fixture.debugElement.triggerEventHandler('mouseover', null);
     fixture.detectChanges();
-    // force hover
-    fixture.nativeElement.dispatchEvent(
-      new MouseEvent('mouseover', {
-        view: window,
-        bubbles: true,
-        cancelable: true
-      })
-    );
-
-    expect(fixture.nativeElement.style.backgroundColor).toBe(component.color);
+    expect(div.nativeElement.style.backgroundColor).toBe(component.color);
   });
 });
