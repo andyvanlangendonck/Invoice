@@ -1,0 +1,20 @@
+<sd-body-content
+  pageLayout="page"
+  [boxed]="true"
+  [fullWidth]="false"
+  [fullHeight]="false"
+  [class]="''">
+  <sd-body-content-header>
+    <sd-page-title title="Products"></sd-page-title>
+    <!-- <code>
+      <pre>{{customers$ | async | json}}</pre>
+    </code> -->
+    <!-- <button       class="btn sd-btn default uppercase btn-with-icon"      (click)="showAddCustomer()"    >
+      <i class="icons8-add"></i> <span>Products</span>
+    </button> -->
+  </sd-body-content-header>
+  <sd-body-content-inner>
+    <sd-spinner *ngIf="loading$ | async"></sd-spinner>
+    <product-list *ngIf="!(loading$ | async)" [products]="products$ | async"></product-list>
+  </sd-body-content-inner>
+</sd-body-content>

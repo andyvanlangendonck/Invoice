@@ -1,0 +1,11 @@
+<sd-card *ngFor="let product of products" [routerLink]="['/customerdetail', product.Id]" >
+  <sd-card-header>
+      {{product.Name}}
+  </sd-card-header>
+  <sd-card-body appHighlight highlightColor="lightgray">
+      <h2 class="card-title">{{product.Name}}</h2>
+      <small class="d-block">Code: {{product.Code}}</small>
+      <small class="d-block">Default price: {{product.DefaultPrice}}</small>
+    </sd-card-body>
+</sd-card>
+

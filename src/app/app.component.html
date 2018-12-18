@@ -4,11 +4,27 @@
     </sd-header>
     <sd-body>
             <sd-sidebar sidebarFoldedMdDown="true">
-                    <sd-sidebar-item [routerLink]="['/']" name="Home" navIcon="icon8-home" ></sd-sidebar-item>
+
+                <sd-sidebar-item [routerLink]="['/']" name="Home" navIcon="icon8-home" >
+                    <sd-subnav>
                     <sd-sidebar-item routerLink="/customer" name="Customer" navIcon="icons8-money"></sd-sidebar-item>
                     <sd-sidebar-item routerLink="/customer" name="Invoice" navIcon="icons8-money"></sd-sidebar-item>
-                    <sd-sidebar-item routerLink="/user/login" name="Login" navIcon="icons8-profile"></sd-sidebar-item>
-                    <sd-sidebar-item routerLink="/user/profile" name="Profile" navIcon="icons8-profile"></sd-sidebar-item>
+                    </sd-subnav>
+                </sd-sidebar-item>
+
+                    <sd-sidebar-item [routerLink]="['/']" name="Products" navIcon="icon8-product" >
+                        <sd-subnav>
+                            <sd-sidebar-item [routerLink]="['/product/list']" name="List" navIcon="icon8-product" ></sd-sidebar-item> 
+                        </sd-subnav> 
+                    </sd-sidebar-item>
+
+                    <sd-sidebar-item routerLink="/user/login" name="Login" navIcon="icons8-profile">
+                        <sd-subnav>
+                            <sd-sidebar-item routerLink="/user/login" name="Login" navIcon="icons8-profile"></sd-sidebar-item>
+                            <sd-sidebar-item routerLink="/user/profile" name="Profile" navIcon="icons8-profile"></sd-sidebar-item>
+                        </sd-subnav>
+                    </sd-sidebar-item>
+
                     <sd-sidebar-item routerLink="/mealvoucher/mc" name="Maaltijdcheques" navIcon="icons8-food"></sd-sidebar-item>
             </sd-sidebar>
         <router-outlet></router-outlet>            
