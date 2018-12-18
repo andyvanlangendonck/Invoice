@@ -1,0 +1,65 @@
+
+<div class="block status-tooltip-container" [ngClass]="color +'-top'">
+  <div class="status-tooltip" placement="bottom" title="{{tooltip}}"></div>
+  <div class="block-top">
+    <div class="block-left">
+        <div class="block-header">
+          <span class="title" title="{{mealVoucherBlock.concernDisplayName}}">{{mealVoucherBlock.concernDisplayName}}</span>
+          <div class="mealvoucher-time">
+              <lpc-mealvoucher-time [mealVoucherBlock]="mealVoucherBlock" ></lpc-mealvoucher-time>
+          </div>
+          <div class="block-content">
+            <div class="block-content-detail contain">
+              <!-- //<lpc-owner></lpc-owner> -->
+              <span>lpc-owner is bruikbaar als IOwner interface is gelinked, </span>
+            </div>
+            <div class="block-content-detail contain">
+              <span [innerHTML]="contactPerson"></span>
+            </div>
+            <div class="block-content-detail contain">
+              <span *ngIf=true title="{{mealVoucherBlock.originDescription}}">{{mealVoucherBlock.originDescription}}</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="block-right">
+            <div class="block-actions">
+                <!-- <lpc-external-applications [getLinksFunc]="getLinksFunc"></lpc-external-applications> -->
+                <span>lpc-external-applications</span>
+                <!-- <a class="btn-open-detail" *ngIf="canEdit" sdPermissionAction [accessCode]="accessCode.Change" [functionality]="functionalityCode" (click)="edit()"><i class="icons8-play" title="Titel btn-open-detail"></i></a> -->
+                <a class="btn-open-detail" *ngIf="true" sdPermissionAction  (click)="edit()"><i class="icons8-play" title="Titel btn-open-detail"></i></a>
+            </div>
+
+            <div class="block-tags mt-auto">
+                <!-- <lpc-validation-file-tag [validationFile]="validationBatch" class="grid"></lpc-validation-file-tag> -->
+                <lpc-mealvoucher-block-tag class="grid"></lpc-mealvoucher-block-tag>
+            </div>
+        </div>
+    </div>
+
+  </div>
+
+<div class="block-footer">
+        <div class="row">
+          <span>block count</span>
+          <span>block count</span>
+          <span>block count</span>
+
+            <!-- <lpc-block-count class="col-sm-4"
+                             count="{{validationBatch.employersCount}}"
+                             caption="{{'CardLabel_EmployerCount' | translate}}"
+                             (click)="viewEmployers($event)">
+            </lpc-block-count>
+            <lpc-block-count class="col-sm-4"
+                             count="{{validationBatch.calculationsCount}}"
+                             caption="{{'CardLabel_CalculationsCount' | translate}}"
+                             (click)="viewCalculations($event)">
+            </lpc-block-count>
+            <lpc-block-count class="col-sm-4"
+                             count="{{validationBatch.postEmploymentsCount}}"
+                             caption="{{'CardLabel_PostEmploymentsCount' | translate}}">
+            </lpc-block-count> -->
+        </div>
+    </div>
+
+</div>
